@@ -1,0 +1,26 @@
+{
+  "name": "hovergen.api",
+  "version": "1.0.0",
+  "description": "Hovergen API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravindersirohi/NodePostgreSQL.git"
+  },
+  "keywords": [
+    "Node",
+    "PostgreSQL"
+  ],
+  "author": "Ravinder Sirohi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravindersirohi/NodePostgreSQL/issues"
+  },
+  "homepage": "https://github.com/ravindersirohi/NodePostgreSQL#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
