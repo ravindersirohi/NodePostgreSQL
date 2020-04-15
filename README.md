@@ -1,2 +1,2 @@
 # NodePostgreSQL
-Restful API with node and PostgreSQL
+Restful API with Node, Express and Postgres
