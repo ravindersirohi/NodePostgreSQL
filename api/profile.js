@@ -1,16 +1,23 @@
 const express = require('express');
 const profile = express.Router();
+const profileService = require('../dataService/profileService');
 
 profile.get('/', (req, resp, next) => {
-    resp.status(200).json({
-        message: 'GET user profile!'
+    profileService.all().then(result => {
+        resp.status(200).json({
+            message: 'All Profiles',
+            data: result
+        });
     });
 });
 
 profile.get('/:profileId', (req, resp, next) => {
     const id = req.params.profileId;
-    resp.status(200).json({
-        message: `GET ${id} profile!`
+    profileService.byId(id).then(result => {
+        resp.status(200).json({
+            message: `Profile ${id} result`,
+            data: result
+        })
     });
 });
 
