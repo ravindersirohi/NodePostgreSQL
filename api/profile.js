@@ -13,7 +13,7 @@ profile.get('/', (req, resp, next) => {
 
 profile.get('/:profileId', (req, resp, next) => {
     const id = req.params.profileId;
-    profileService.byId(id).then(result => {
+    profileService.getById(id).then(result => {
         resp.status(200).json({
             message: `Profile ${id} result`,
             data: result
@@ -22,14 +22,22 @@ profile.get('/:profileId', (req, resp, next) => {
 });
 
 profile.post('/', (req, resp, next) => {
-    resp.status(200).json({
-        message: 'POST user profile!'
+    const { id, fullname, email } = req.body;
+    console.log(req.body);
+    profileService.create({ fullname, email }).then(result => {
+        resp.status(200).json({
+            message: `${fullname} profile has been Created!`
+        })
     });
 });
 
 profile.put('/', (req, resp, next) => {
-    resp.status(200).json({
-        message: 'PUT user profile!'
+    const { id, fullname, email } = req.body;
+    console.log(req.body);
+    profileService.update({ id, fullname, email }).then(result => {
+        resp.status(200).json({
+            message: `Profile ${id} has been updated!`
+        })
     });
 });
 

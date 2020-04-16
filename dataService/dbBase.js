@@ -23,4 +23,21 @@ const execute = async (q) => {
     }
 }
 
-module.exports = { read: execute };
+const executeQuery = async (q, params) => {
+    const client = await pool.connect()
+    try {
+        const { rows } = await client.query(q, params);
+        return rows;
+    }
+    catch (e) {
+        console.log(e);
+    }
+    finally {
+        client.release();
+    }
+}
+
+module.exports = {
+    execute,
+    executeQuery
+};
