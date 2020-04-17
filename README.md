@@ -1,9 +1,10 @@
 # Node, Express and Postgres
 Restful API with Node, Express and Postgres
 
-Clone the repository and follow the below
+Clone the repository and restore the dependencies
 
-# Postgress Schema Script : Connect the database via pg Admin and run below script
+
+# Postgres Schema Script : Connect the database via pg Admin and run below script
 
 CREATE TABLE Profiles
 (
@@ -15,10 +16,6 @@ CREATE TABLE Profiles
     isactive bit(1),
     CONSTRAINT profiles_pkey PRIMARY KEY (id)
 )
-
-# API
-From command prompt - npm start
-Access the API via - http://localhost:3000
 
 
 # API endpoints
