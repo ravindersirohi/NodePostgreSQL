@@ -20,9 +20,9 @@ profile.get('/:profileId', (req, resp, next) => {
 });
 
 profile.post('/', (req, resp, next) => {
-    const { id, fullname, email } = req.body;
+    const { id, fullname, address, email } = req.body;
     console.log(req.body);
-    profileService.create({ fullname, email }).then(result => {
+    profileService.create({ fullname, email, address }).then(result => {
         resp.status(200).json({
             message: `${fullname} profile has been Created!`
         })
@@ -30,9 +30,9 @@ profile.post('/', (req, resp, next) => {
 });
 
 profile.put('/', (req, resp, next) => {
-    const { id, fullname, email, isactive } = req.body;
+    const { id, fullname, email, address, isactive } = req.body;
     console.log(req.body);
-    profileService.update({ id, fullname, email, isactive }).then(result => {
+    profileService.update({ id, fullname, email, address, isactive }).then(result => {
         resp.status(201).json({
             message: `Profile ${id} has been updated!`
         })
