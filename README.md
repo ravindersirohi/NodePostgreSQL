@@ -1,7 +1,7 @@
 # Node, Express and Postgres
 Restful API with Node, Express and Postgres
 
-Clone the repository and restore the dependencies
+Clone the repository and restore the dependencies via npm install
 
 
 # Postgres Schema Script : Connect the database via pg Admin and run below script
