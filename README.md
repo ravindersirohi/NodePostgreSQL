@@ -22,18 +22,18 @@ CREATE TABLE Profiles
 # API endpoints
 
 # GET endpoints - Get Profiles
-http://localhost:3000/profile
-http://localhost:3000/profile/1
+http://localhost:3000/api/profile
+http://localhost:3000/api/profile/1
 
 # POST endpoint - Create Profile
-http://localhost:3000/profile
+http://localhost:3000/api/profile
 Body : {
     "fullname": "James Bond",
     "email": "bond@007.com"
 }
 
 # PUT endpoint - Update Profile
-http://localhost:3000/profile
+http://localhost:3000/api/profile
 Body : {
     "id":"1"
     "fullname": "James Bond",
@@ -42,4 +42,4 @@ Body : {
 }
 
 # DELETE endpoint - Delete Profile
-http://localhost:3000/profile/1
+http://localhost:3000/api/profile/1
