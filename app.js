@@ -8,9 +8,14 @@ app.use(
         extended: true,
     })
 );
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 const profileRoutes = require('./api/profile');
 
-app.use('/profile', profileRoutes);
+app.use('/api/profile', profileRoutes);
 
 app.use((req, resp, next) => {
     resp.status(200).send('Welcome to Node with Postgres API');

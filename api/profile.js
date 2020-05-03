@@ -4,18 +4,14 @@ const profileService = require('../dataService/profileService');
 
 profile.get('/', (req, resp, next) => {
     profileService.all().then(result => {
-        resp.status(200).json({
-            data: result
-        });
+        resp.status(200).json(result);
     });
 });
 
 profile.get('/:profileId', (req, resp, next) => {
     const id = req.params.profileId;
     profileService.getById(id).then(result => {
-        resp.status(200).json({
-            data: result
-        })
+        resp.status(200).json(result)
     });
 });
 
